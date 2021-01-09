@@ -1,30 +1,18 @@
 class Contact {
 
     
-    get fullName(){ return this._fullName;}
-    get first ()  { return  this._first; }
-    get last ()   { return  this._last; }
+    get name(){ return this._name;}
     get address (){ return  this._address; }
     get city ()   { return  this._city; }
     get state ()  { return  this._state; }
     get zip ()    { return  this._zip; }
     get phone ()  { return  this._phone; }
 
-    set fullName(fullName){
-        this._fullName = fullName;
-    }
-
-    set first(first){
+    set name(name){
         let nameRegex = RegExp('^[A-Z]{1}[a-z]{2,}$');
-        if (nameRegex.test(first)) this._first = first;
-        else throw "First is Invalid"    
+        if (nameRegex.test(name))  this._name = name;
+        else throw "Name is Invalid";
     }
-
-    set last(last){
-       let nameRegex = RegExp('^[A-Z]{1}[a-z]{2,}$');
-       if (nameRegex.test(last)) this._last = last;
-       else throw "Last is Invalid"    
-     }
 
     set address(address){
         let nameRegex = RegExp('^[A-Z a-z]{4,}$');
@@ -33,15 +21,12 @@ class Contact {
     }
 
     set city(city){
-        let nameRegex = RegExp('^[A-Z a-z]{4,}$');
-        if (nameRegex.test(city)) this._city = city;
-        else throw "city  is Invalid"    
+         this._city = city;  
     }
 
     set state(state){
-        let nameRegex = RegExp('^[A-Z a-z]{4,}$');
-        if (nameRegex.test(state)) this._state = state;
-        else throw "state  is Invalid"    
+       this._state = state;
+          
     }
 
     set zip(zip){
@@ -57,13 +42,11 @@ class Contact {
     }
 
     toString(){
-        return "First Name " + this.first + 
-        "; Last Name " + this.last+
-        "; Address " + this.address+
-        "; city " + this.city+
-        "; State " + this.state+
-        "; Zip " + this.zip+
-        "; Phone " + this.phone+
-        "; email " + this.email;
+        return " Name " + this._name + 
+        "; Address " + this._address+
+        "; city " + this._city+
+        "; State " + this._state+
+        "; Zip " + this._zip+
+        "; Phone " + this._phone
     }
 }

@@ -31,42 +31,44 @@
         <div class="row-content">
              <label class="label txt" for="name">Full Name</label>
              <input class="input" type="text" id="name" name="name" required>
-            <error-output class="text-error" for="text"></error-output>
+            <error-output class="text-error"  for="text"></error-output>
         </div><!--Full name container-->
         <div class="row-content">
           <label class="label txt" for="phone">Phone Number</label>
-          <input class="input" type="number" id="phone"
-           name="phone" placeholder="" required>
+          <input class="input" type="number" id="phone" name="phone"  required>
+          <error-output class="phone-error"  for="number"></error-output>
         </div><!--Phone container-->
         <div class="row-content">
           <label class="label txt" for="address">Address</label>
-          <textarea id="address" class="input" name="address" placeholder="" style="height:100px"></textarea>
+          <textarea id="address" class="input" name="address" style="height:100px"></textarea>
+          <error-output class="address-error"  for="text"></error-output>
         </div><!--Addrress container-->
         <div class="city-state-zip-content">
           <div class="row-content city">
-            <label class="label txt" for="city">City</label>
-            <select id="City" name="City"  style="width: 80%"></select>
+            <label for="city">City</label>
+            <select id="city" name="City"  style="width: 80%"></select>
           </div><!--City-->
           <div class="row-content state">
-            <label class="label txt" for="state">State</label>
-            <select id="State" name="State" style="width: 80%"></select>
+            <label for="state">State</label>
+            <select id="state" name="State" style="width: 80%"></select>
           </div><!--State-->
           <div class="row-content zip">
-            <label class="label txt" for="state">Zip</label>
-            <input class="input" type="number" id="zip" name="zip" placeholder="" required style="width: 100%">
+            <label for="zip">Zip</label>
+            <input class="input" type="number" id="zip" name="Zip" placeholder="" required style="width: 100%">
+            <error-output class="zip-error"  for="number"></error-output>
           </div><!--Zip-->
         </div><!--City,state,Zip Container-->
         <div class="button-content">
           <div class="empty-content"></div>
           <div class="add-reset">
-              <button onclick=myFunction() type="add" class="button addButton" id="addButton">Add</button>
+              <button type="submit" class="button addButton" id="addButton">Add</button>
               <button type="reset" class="button resetButton">Reset</button>
           </div>
        </div><!--Button Container-->   
       </form> <!--form end-->
     </div><!--form-container-->
   </div><!--main-container-->
-  <script src="../js/addressbook_input.js"></script>
+  <script src="../js/addressbook_form.js"></script>
   <script src="../js/Contact.js"></script>
 </body>
 </html>
