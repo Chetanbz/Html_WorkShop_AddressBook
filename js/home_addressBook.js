@@ -2,6 +2,7 @@ let addressbookList ;
 window.addEventListener('DOMContentLoaded',(event)=>{
   addressbookList = getAddressDataFromStorages();
   createInnerHtml();
+  remove(this);
 });
 
 const getAddressDataFromStorages = () =>{
@@ -15,6 +16,7 @@ const createInnerHtml= () => {
   let innerHtml = `${headerHtml}`;
 
   for(const contact of addressbookList){
+    contact.id = addressbookList.indexOf(contact);
     innerHtml = `${innerHtml}
       <tr>
         <td>${contact._name}</td>
@@ -24,13 +26,22 @@ const createInnerHtml= () => {
         <td>${contact._zip}</td>
         <td>${contact._phone}</td>
         <td>
-          <img id="1" onclick="remove(this)" alt="delete" src="../assests/icons/delete-black-18dp.svg">
-          <img id="1"  onclick="update(this)" alt="edit" src="../assests/icons/create-black-18dp.svg">
+          <img id="${contact.id}" onclick="remove(this)" alt="delete" src="../assests/icons/delete-black-18dp.svg">
+          <img id="${contact.id}"  onclick="update(this)" alt="edit" src="../assests/icons/create-black-18dp.svg">
         </td>
       </tr>
     `;
 
     document.querySelector('#table-display').innerHTML = innerHtml;
+  }
 }
+
+const remove=(node) =>{
+  let contactData = addressbookList.find(contact=>contact.id==node.id);
+  //if (!contactData) return;
+  const index = addressbookList.indexOf(contactData);
+  addressbookList.splice(index,1);
+  localStorage.setItem("AddressBookList",JSON.stringify(addressbookList));
+  createInnerHtml();
 }
 

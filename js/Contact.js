@@ -1,6 +1,5 @@
 class Contact {
-
-    
+id;
     get name(){ return this._name;}
     get address (){ return  this._address; }
     get city ()   { return  this._city; }
@@ -9,13 +8,13 @@ class Contact {
     get phone ()  { return  this._phone; }
 
     set name(name){
-        let nameRegex = RegExp('^[A-Z]{1}[a-z]{2,}$');
+        let nameRegex = RegExp('^[A-Z]{1}[a-z A-Z]{2,}$');
         if (nameRegex.test(name))  this._name = name;
         else throw "Name is Invalid";
     }
 
     set address(address){
-        let nameRegex = RegExp('^[A-Z a-z]{4,}$');
+        let nameRegex = RegExp('^[A-Z a-z ,0-9]{4,}$');
         if (nameRegex.test(address)) this._address = address;
         else throw "Address is Invalid"    
     }
