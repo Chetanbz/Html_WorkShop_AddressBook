@@ -44,7 +44,6 @@ function createAndUpdateStorage(contact){
   localStorage.setItem("AddressBookList",JSON.stringify(addressbookList))
 }
 
-
 function eventListner(){
   eventListnerName();
   eventListnerPhone();
